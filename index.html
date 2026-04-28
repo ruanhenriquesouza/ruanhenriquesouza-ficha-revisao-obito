@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Ficha de Revisão de Causas de Óbito - HEAT - Word</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9eef3;
+    color: #000;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    background: #1f3a5f;
+    color: #fff;
+    padding: 10px 16px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .toolbar h1 {
+    font-size: 14px;
+    margin: 0;
+    flex: 1;
+  }
+  .toolbar button {
+    background: #ffb703;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .toolbar button:hover { background: #fb8500; }
+  .toolbar button.secondary { background: #fff; }
+
+  .page {
+    width: 297mm;
+    min-height: 210mm;
+    margin: 16px auto;
+    padding: 6mm;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  }
+
+  .header {
+    text-align: center;
+    border: 2px solid #000;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    font-size: 10.5px;
+    line-height: 1.4;
+  }
+  .header .title-line1 { font-weight: bold; }
+  .header .title-line2 { font-weight: bold; margin-top: 2px; }
+  .header .title-main {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 3px;
+  }
+
+  table.form {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 10.5px;
+  }
+  table.form td {
+    border: 1px solid #000;
+    padding: 2px 4px;
+    vertical-align: middle;
+    height: 26px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .label {
+    font-weight: bold;
+    font-size: 9.5px;
+    background: #f4f4f4;
+    white-space: normal;
+    line-height: 1.15;
+  }
+  .label-sm {
+    font-weight: bold;
+    font-size: 8.5px;
+    background: #f4f4f4;
+    white-space: normal;
+    line-height: 1.1;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  input[type="number"],
+  input[type="tel"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    font: inherit;
+    font-size: 10px;
+    background: transparent;
+    padding: 2px;
+    min-width: 0;
+  }
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  input[type="time"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  textarea:focus {
+    background: #fff7d6;
+  }
+  textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    font: inherit;
+    font-size: 10px;
+    background: transparent;
+    resize: none;
+    padding: 2px;
+    line-height: 1.3;
+    min-width: 0;
+  }
+
+  .checkbox-cell {
+    text-align: center;
+    font-size: 9.5px;
+    font-weight: bold;
+    white-space: normal;
+  }
+  .checkbox-cell label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-wrap: wrap;
+    line-height: 1.1;
+  }
+  .checkbox-cell input[type="checkbox"] {
+    transform: scale(1.1);
+    margin-right: 0;
+    vertical-align: middle;
+  }
+
+  .section-header {
+    text-align: center;
+    font-weight: bold;
+    background: #d9d9d9;
+    font-size: 10.5px;
+    text-transform: uppercase;
+  }
+
+  .causa-row td {
+    height: 28px;
+  }
+  .causa-letter {
+    text-align: center;
+    font-weight: bold;
+    width: 22px;
+    background: #f4f4f4;
+  }
+
+  .footer-row td {
+    background: #fafafa;
+  }
+
+  .responsavel-fixed {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 6mm;
+  }
+  @media print {
+    body { background: #fff; }
+    .toolbar { display: none; }
+    .page {
+      width: 100%;
+      min-height: auto;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    table.form {
+      font-size: 9.6px;
+    }
+    .label {
+      font-size: 8.8px;
+    }
+    .label-sm {
+      font-size: 8px;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    input[type="number"],
+    input[type="tel"],
+    textarea {
+      font-size: 9.6px;
+    }
+    input[type="text"]:focus,
+    input[type="date"]:focus,
+    input[type="time"]:focus,
+    input[type="number"]:focus,
+    input[type="tel"]:focus,
+    textarea:focus {
+      background: transparent;
+    }
+    input[type="checkbox"] {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .label, .label-sm, .section-header, .causa-letter {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>Ficha de Revisão de Causas de Óbito — versão compatível com Word</h1>
+  <button class="secondary" onclick="limparFormulario()">Limpar</button>
+  <button onclick="window.print()">Imprimir / Salvar PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="header">
+    <div class="title-line1">SES RJ &nbsp;&nbsp; IDEAS &nbsp;&nbsp; NVH &nbsp;&nbsp; SERVIÇO DE ANÁLISE DE ÓBITOS</div>
+    <div class="title-line2">HOSPITAL ESTADUAL ALBERTO TORRES</div>
+    <div class="title-main">Ficha de Revisão de Causas de Óbito</div>
+  </div>
+
+  <table class="form">
+    <colgroup>
+      <col style="width:8%"><col style="width:6%"><col style="width:8%"><col style="width:6%">
+      <col style="width:7%"><col style="width:6%"><col style="width:7%"><col style="width:6%">
+      <col style="width:7%"><col style="width:7%"><col style="width:7%"><col style="width:7%">
+      <col style="width:9%"><col style="width:9%">
+    </colgroup>
+
+    <tr>
+      <td class="label">NOME</td>
+      <td colspan="10"><input type="text" name="nome"></td>
+      <td class="label">Nº DO PRONT</td>
+      <td colspan="2"><input type="text" name="prontuario"></td>
+    </tr>
+
+    <tr>
+      <td class="label">PROCEDÊNCIA</td>
+      <td colspan="2" class="checkbox-cell"><label><input type="checkbox" name="proc_resid">RESID</label></td>
+      <td colspan="2" class="checkbox-cell"><label><input type="checkbox" name="proc_via">VIA PÚBLICA</label></td>
+      <td colspan="3" class="checkbox-cell"><label><input type="checkbox" name="proc_outestab">OUT. ESTAB. SAÚDE</label></td>
+      <td colspan="2" class="checkbox-cell"><label><input type="checkbox" name="proc_ilpi">ILPI</label></td>
+      <td colspan="2" class="label">BAM</td>
+      <td colspan="2"><input type="text" name="bam"></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="checkbox-cell"><label><input type="checkbox" name="sexo_fem">FEM</label></td>
+      <td colspan="2" class="checkbox-cell"><label><input type="checkbox" name="sexo_masc">MASC</label></td>
+      <td class="label-sm">MIN</td>
+      <td><input type="text" name="idade_min"></td>
+      <td class="label-sm">H</td>
+      <td><input type="text" name="idade_h"></td>
+      <td class="label-sm">DIAS</td>
+      <td><input type="text" name="idade_dias"></td>
+      <td class="label-sm">MESES</td>
+      <td><input type="text" name="idade_meses"></td>
+      <td class="label-sm">ANOS</td>
+      <td><input type="text" name="idade_anos"></td>
+    </tr>
+    <tr>
+      <td colspan="10" class="label">DATA DO NASCIMENTO</td>
+      <td colspan="4"><input type="date" name="data_nasc"></td>
+    </tr>
+
+    <tr>
+      <td class="label">END.</td>
+      <td colspan="9"><input type="text" name="endereco"></td>
+      <td class="label">MUNICÍPIO</td>
+      <td colspan="3"><input type="text" name="municipio"></td>
+    </tr>
+
+    <tr>
+      <td class="label">BAIRRO</td>
+      <td colspan="6"><input type="text" name="bairro"></td>
+      <td class="label">TEL</td>
+      <td colspan="2"><input type="tel" name="tel"></td>
+      <td class="label">CEL</td>
+      <td colspan="3"><input type="tel" name="cel"></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="label">SETOR ADMISSÃO</td>
+      <td colspan="4"><input type="text" name="setor_adm"></td>
+      <td class="label">DATA</td>
+      <td colspan="2"><input type="date" name="data_adm"></td>
+      <td class="label">HORA</td>
+      <td colspan="2"><input type="time" name="hora_adm"></td>
+      <td class="label">PERMANÊNCIA</td>
+      <td><input type="text" name="permanencia"></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="label">SETOR ÓBITO</td>
+      <td colspan="4"><input type="text" name="setor_obito"></td>
+      <td class="label">DATA</td>
+      <td colspan="2"><input type="date" name="data_obito"></td>
+      <td class="label">HORA</td>
+      <td colspan="2"><input type="time" name="hora_obito"></td>
+      <td colspan="2"></td>
+    </tr>
+
+    <tr>
+      <td colspan="3" class="label">SINAIS E SINTOMAS</td>
+      <td colspan="11"><textarea name="sinais_sintomas" rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="label">EVOLUÇÃO</td>
+      <td colspan="11"><textarea name="evolucao" rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="label">EX. CONFIRM. DIAG.</td>
+      <td colspan="11"><textarea name="ex_confirm" rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="label">CO-MORBIDADES</td>
+      <td colspan="11"><textarea name="comorbidades" rows="2"></textarea></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="label">ATESTANTE</td>
+      <td colspan="6"><input type="text" name="atestante"></td>
+      <td colspan="2" class="label">ESPECIALIDADE</td>
+      <td colspan="4"><input type="text" name="especialidade"></td>
+    </tr>
+
+    <tr>
+      <td colspan="3" class="label">CIRURGIA REALIZADA</td>
+      <td colspan="5"><input type="text" name="cirurgia"></td>
+      <td class="label">DATA</td>
+      <td colspan="2"><input type="date" name="cirurgia_data"></td>
+      <td colspan="2" class="label">HORA TÉRMINO</td>
+      <td><input type="time" name="cirurgia_hora"></td>
+    </tr>
+  </table>
+
+  <table class="form" style="margin-top: 6px;">
+    <colgroup>
+      <col style="width:3%"><col style="width:47%"><col style="width:3%"><col style="width:47%">
+    </colgroup>
+    <tr>
+      <td colspan="2" class="section-header">CAUSAS DE ÓBITO ATESTADAS</td>
+      <td colspan="2" class="section-header">CAUSAS DE ÓBITO REVISADAS / INVESTIGADAS</td>
+    </tr>
+    <tr class="causa-row">
+      <td class="causa-letter">a</td>
+      <td><input type="text" name="atest_a"></td>
+      <td class="causa-letter">a</td>
+      <td><input type="text" name="rev_a"></td>
+    </tr>
+    <tr class="causa-row">
+      <td class="causa-letter">b</td>
+      <td><input type="text" name="atest_b"></td>
+      <td class="causa-letter">b</td>
+      <td><input type="text" name="rev_b"></td>
+    </tr>
+    <tr class="causa-row">
+      <td class="causa-letter">c</td>
+      <td><input type="text" name="atest_c"></td>
+      <td class="causa-letter">c</td>
+      <td><input type="text" name="rev_c"></td>
+    </tr>
+    <tr class="causa-row">
+      <td class="causa-letter">d</td>
+      <td><input type="text" name="atest_d"></td>
+      <td class="causa-letter">d</td>
+      <td><input type="text" name="rev_d"></td>
+    </tr>
+  </table>
+
+  <table class="form" style="margin-top: 6px;">
+    <colgroup>
+      <col style="width:18%"><col style="width:22%"><col style="width:15%"><col style="width:45%">
+    </colgroup>
+    <tr class="footer-row">
+      <td class="label">DATA DA ANÁLISE</td>
+      <td><input type="date" name="data_analise"></td>
+      <td class="label">RESPONSÁVEL</td>
+      <td class="responsavel-fixed">LUIZ CARLOS FERREIRO LAIT &nbsp; CRM 52.15374-9</td>
+    </tr>
+  </table>
+
+</div>
+
+<script>
+  function limparFormulario() {
+    if (!confirm('Deseja limpar todos os campos?')) return;
+    document.querySelectorAll('input[type="text"], input[type="date"], input[type="time"], input[type="number"], input[type="tel"], textarea')
+      .forEach(el => { el.value = ''; });
+    document.querySelectorAll('input[type="checkbox"]')
+      .forEach(el => { el.checked = false; });
+  }
+
+  document.querySelectorAll('textarea').forEach(t => {
+    t.addEventListener('input', () => {
+      t.style.height = 'auto';
+      t.style.height = (t.scrollHeight) + 'px';
+    });
+  });
+</script>
+
+</body>
+</html>
